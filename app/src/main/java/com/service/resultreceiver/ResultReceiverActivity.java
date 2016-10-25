@@ -49,7 +49,6 @@ public class ResultReceiverActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     String resultValue = resultData.getString(Constants.RECEIVER_RESULT);
                     etOutput.setText(resultValue);
-                    Toast.makeText(ResultReceiverActivity.this, resultValue, Toast.LENGTH_SHORT).show();
                 }
             }
         });

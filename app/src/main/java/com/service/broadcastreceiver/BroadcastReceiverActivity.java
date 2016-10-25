@@ -26,8 +26,8 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
     private TextView etOutput;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broadcast);
         etInput = (EditText) findViewById(R.id.et_receiver);
         etOutput = (TextView) findViewById(R.id.tv_result);
@@ -59,7 +59,7 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
             int resultCode = intent.getIntExtra(Constants.RESULT_CODE, RESULT_CANCELED);
             if (resultCode == RESULT_OK) {
                 String resultValue = intent.getStringExtra(Constants.RECEIVER_RESULT);
-                Toast.makeText(BroadcastReceiverActivity.this, resultValue, Toast.LENGTH_SHORT).show();
+                etOutput.setText(resultValue);
             }
         }
     };
