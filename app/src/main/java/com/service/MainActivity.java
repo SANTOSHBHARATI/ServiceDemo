@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.service.alarm.AlarmActivity;
 import com.service.broadcastreceiver.BroadcastReceiverActivity;
 import com.service.resultreceiver.ResultReceiverActivity;
 
@@ -23,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBroadcastReceiver(View view){
         Intent intent = new Intent(this,BroadcastReceiverActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickAlarmReceiver(View view){
+        Intent intent = new Intent(this,AlarmActivity.class);
         startActivity(intent);
     }
 }

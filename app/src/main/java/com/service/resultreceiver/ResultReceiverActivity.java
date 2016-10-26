@@ -8,10 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.service.R;
-import com.service.consts.Constants;
+import com.service.consts.ConstData;
 
 /**
  * Created by santosh.bharati on 10/25/2016.
@@ -34,8 +33,8 @@ public class ResultReceiverActivity extends AppCompatActivity {
 
     public void onResultReceiverClick(View view) {
         Intent i = new Intent(this, MyIntentService.class);
-        i.putExtra(Constants.RECEIVER_KEY, etInput.getText().toString());
-        i.putExtra(Constants.RECEIVER, myResultReceiver);
+        i.putExtra(ConstData.RECEIVER_KEY, etInput.getText().toString());
+        i.putExtra(ConstData.RECEIVER, myResultReceiver);
         startService(i);
     }
 
@@ -47,7 +46,7 @@ public class ResultReceiverActivity extends AppCompatActivity {
             @Override
             public void onReceiveResult(int resultCode, Bundle resultData) {
                 if (resultCode == RESULT_OK) {
-                    String resultValue = resultData.getString(Constants.RECEIVER_RESULT);
+                    String resultValue = resultData.getString(ConstData.RECEIVER_RESULT);
                     etOutput.setText(resultValue);
                 }
             }

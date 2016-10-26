@@ -21,4 +21,11 @@
         android:text="Service Broadcast Receiver"
         android:onClick="onClickBroadcastReceiver"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alarm Receiver"
+        android:onClick="onClickAlarmReceiver"
+        />
 </LinearLayout>
